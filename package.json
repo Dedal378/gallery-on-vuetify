@@ -1,5 +1,5 @@
 {
-  "name": "ulbitv-gallery",
+  "name": "gallery-on-vuetify",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
