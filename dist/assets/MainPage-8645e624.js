@@ -1,0 +1,1 @@
+import{_ as e,o as t,c}from"./index-d6088cb8.js";const n={},o={class:"d-flex justify-center align-center font-weight-bold"};function s(r,a){return t(),c("div",o," MAIN PAIGE ")}const f=e(n,[["render",s]]);export{f as default};
