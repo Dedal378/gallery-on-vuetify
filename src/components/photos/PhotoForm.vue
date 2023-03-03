@@ -5,7 +5,7 @@ const emits = defineEmits(['addPhoto'])
 const title = ref('')
 const img = ref(null)
 
-const addPhoto = () => {
+function addPhoto() {
   const reader = new FileReader()
   reader.onload = () => {
     let photo = {
@@ -21,10 +21,21 @@ const addPhoto = () => {
 
 <template>
   <v-container>
-    <v-row class="d-flex">
-      <v-text-field v-model="title" />
-      <v-file-input v-model="img" />
-      <v-btn @click="addPhoto">Добавить</v-btn>
+    <v-row class="d-flex align-center justify-start">
+      <v-text-field
+        v-model="title"
+        class="mr-10"
+      />
+      <v-file-input
+        v-model="img"
+        class="mr-5"
+      />
+      <v-btn
+        class="mb-5"
+        @click="addPhoto"
+      >
+        Добавить
+      </v-btn>
     </v-row>
   </v-container>
 </template>

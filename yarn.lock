@@ -1214,6 +1214,27 @@ __metadata:
   languageName: node
   linkType: hard
 
+"gallery-on-vuetify@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "gallery-on-vuetify@workspace:."
+  dependencies:
+    "@mdi/font": 7.0.96
+    "@vitejs/plugin-vue": ^4.0.0
+    axios: ^1.3.4
+    eslint: ^8.22.0
+    eslint-plugin-vue: ^9.3.0
+    pinia: ^2.0.23
+    prettier: ^2.8.4
+    roboto-fontface: "*"
+    vite: ^4.1.4
+    vite-plugin-vuetify: ^1.0.0-alpha.12
+    vue: ^3.2.38
+    vue-router: ^4.0.0
+    vuetify: ^3.0.0
+    webfontloader: ^1.0.0
+  languageName: unknown
+  linkType: soft
+
 "gauge@npm:^4.0.3":
   version: 4.0.4
   resolution: "gauge@npm:4.0.4"
@@ -2359,27 +2380,6 @@ __metadata:
   checksum: 4fb3272df21ad1c552486f8a2f8e115c09a521ad7a8db3d56d53718d0c907b62c6e9141ba5f584af3f6830d0872c521357e512381f24f7c44acae583ad517d73
   languageName: node
   linkType: hard
-
-"ulbitv-gallery@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "ulbitv-gallery@workspace:."
-  dependencies:
-    "@mdi/font": 7.0.96
-    "@vitejs/plugin-vue": ^4.0.0
-    axios: ^1.3.4
-    eslint: ^8.22.0
-    eslint-plugin-vue: ^9.3.0
-    pinia: ^2.0.23
-    prettier: ^2.8.4
-    roboto-fontface: "*"
-    vite: ^4.1.4
-    vite-plugin-vuetify: ^1.0.0-alpha.12
-    vue: ^3.2.38
-    vue-router: ^4.0.0
-    vuetify: ^3.0.0
-    webfontloader: ^1.0.0
-  languageName: unknown
-  linkType: soft
 
 "unique-filename@npm:^2.0.0":
   version: 2.0.1

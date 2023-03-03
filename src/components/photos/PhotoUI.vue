@@ -1,7 +1,8 @@
 <script setup>
 const props = defineProps({ photo: { type: Object, required: true }})
 const emits = defineEmits(['openPhoto'])
-const openPhoto = () => { emits('openPhoto', props.photo) }
+
+function openPhoto() { return emits('openPhoto', props.photo) }
 </script>
 
 <template>
