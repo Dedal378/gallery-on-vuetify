@@ -1,33 +1,18 @@
 <script setup>
-import { computed, onMounted, ref, watch } from 'vue'
+import { computed } from 'vue'
+import { storeToRefs } from 'pinia'
+import { useDialogStore } from '@/store/dialog.js'
 
-const dialogVisible = ref(false)
-const emits = defineEmits(['input'])
-
-const props = defineProps({
-  photo: { type: Object, required: true },
-  value: { type: Boolean, default: false },
-})
-const fullTitle = computed(() => `Название фотографии - ${ props.photo.title }`)
-
-watch(() => props.value,
-  newValue => {
-    dialogVisible.value = newValue
-  }
-)
-watch(() => dialogVisible,
-  newValue => {
-    emits('input', newValue)
-  }
-)
-
-onMounted(() => dialogVisible.value = props.value)
+const store = useDialogStore()
+const { getCurrentPhoto, getDialogVisible, fullTitle } = storeToRefs(store)
+const { hideDialog } = store
 </script>
 
 <template>
   <v-dialog
-    v-model="dialogVisible"
+    v-model="getDialogVisible"
     max-width="600"
+    @click:outside="hideDialog"
   >
     <v-card>
       <v-card-title>{{ fullTitle }}</v-card-title>
@@ -38,7 +23,7 @@ onMounted(() => dialogVisible.value = props.value)
           width="200"
         >
           <img
-            :src="photo.url"
+            :src="getCurrentPhoto.url"
             alt="pic"
           >
         </v-img>

@@ -9,7 +9,7 @@
     >
       <template v-slot:append>
 
-        <router-link to="/">
+        <router-link to="/gallery-on-vuetify/">
           <v-btn
             class="ml-3"
             color="white"
@@ -19,7 +19,7 @@
           </v-btn>
         </router-link>
 
-        <router-link to="/photos">
+        <router-link to="/gallery-on-vuetify/photos">
           <v-btn
             class="ml-3"
             color="white"

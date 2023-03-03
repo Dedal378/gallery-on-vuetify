@@ -1,29 +1,18 @@
 <script setup>
-import { onBeforeMount, ref } from 'vue'
-import { apiClient } from '@/plugins/axios.js'
+import { onBeforeMount } from 'vue'
+import { usePhotoStore } from '@/store/photo.js'
+import { storeToRefs } from 'pinia'
 import PhotoUI from '@/components/photos/PhotoUI.vue'
 import PhotoForm from '@/components/photos/PhotoForm.vue'
 import PhotoDialog from '@/components/photos/PhotoDialog.vue'
 
-let photos = ref([])
-let currentPhoto = ref({})
-const dialogVisible = ref(false)
+const store = usePhotoStore()
+const { photos, getAllPhotos } = storeToRefs(store)
+const { setPhotos } = store
 
-const getData = async() => {
-  try {
-    const { data } = await apiClient()
-    photos.value = data
-  } catch (error) {
-    throw new Error(error)
-  }
-}
-let addPhoto = photo => { photos.value.push(photo) }
-let openPhoto = photo => {
-  currentPhoto.value = photo
-  dialogVisible.value = true
-}
+function addPhoto(photo) { photos.value.push(photo) }
 
-onBeforeMount(async() => await getData())
+onBeforeMount(async() => await setPhotos())
 </script>
 
 <template>
@@ -36,16 +25,12 @@ onBeforeMount(async() => await getData())
 
     <v-row>
       <PhotoUI
-        v-for="photo in photos"
+        v-for="photo in getAllPhotos"
         :key="photo.id"
         :photo="photo"
-        @openPhoto="openPhoto"
       />
     </v-row>
 
-    <PhotoDialog
-      v-model="dialogVisible"
-      :photo="currentPhoto"
-    />
+    <PhotoDialog />
   </v-container>
 </template>

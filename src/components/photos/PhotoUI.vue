@@ -1,8 +1,15 @@
 <script setup>
-const props = defineProps({ photo: { type: Object, required: true }})
-const emits = defineEmits(['openPhoto'])
+import { useDialogStore } from '@/store/dialog.js'
 
-function openPhoto() { return emits('openPhoto', props.photo) }
+const store = useDialogStore()
+const { showDialog, setCurrentPhoto } = store
+
+const props = defineProps({ photo: { type: Object, required: true }})
+
+function openPhoto() {
+  setCurrentPhoto(props.photo)
+  showDialog()
+}
 </script>
 
 <template>

@@ -2,11 +2,11 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   {
-    path: '/',
+    path: '/gallery-on-vuetify/',
     component: () => import('@/views/pages/MainPage.vue'),
   },
   {
-    path: '/photos',
+    path: '/gallery-on-vuetify/photos',
     component: () => import('@/views/pages/PhotosPage.vue'),
   }
 ]
