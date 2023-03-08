@@ -1,5 +1,4 @@
 <script setup>
-import { computed } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useDialogStore } from '@/store/dialog.js'
 
